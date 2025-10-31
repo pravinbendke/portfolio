@@ -1,0 +1,489 @@
+/* ------------------ Global Styles ------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #e3f2fd, #ffffff);
+  color: #222;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+  color: #0059ff;
+  text-align: center;
+}
+
+/* ------------------ Navbar ------------------ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 8%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #ffd43b;
+}
+
+.logo span { color: #1866f9da; }
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #d9c80a;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #007bff;
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+#themeToggle {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* ------------------ Hero ------------------ */
+#hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top left, #333b41, #ffffff);
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 600px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid #0b1eec; /* gold accent */
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.3); /* subtle glow effect */
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+  margin-bottom: 25px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile-pic:hover {
+  transform: scale(1.08) rotate(3deg);
+  box-shadow: 0 12px 25px rgba(0, 123, 255, 0.5);
+}
+
+/* Dark Mode */
+.dark-mode .profile-pic {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 20px rgba(255, 212, 59, 0.3);
+  border-color: #ffd43b;
+}
+
+.dark-mode .profile-pic:hover {
+  box-shadow: 0 12px 25px rgba(255, 212, 59, 0.5);
+}
+
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #007bff, #4b8bbe);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #0056b3, #0066cc);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* Dark Mode */
+.dark-mode .btn {
+  background: linear-gradient(135deg, #ffd43b, #ffc107);
+  color: #121212;
+  box-shadow: 0 5px 15px rgba(255, 212, 59, 0.3);
+}
+
+.dark-mode .btn:hover {
+  background: linear-gradient(135deg, #e6c200, #ffb300);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 212, 59, 0.4);
+}
+
+
+/* ------------------ Sections ------------------ */
+.section {
+  padding: 60px 8%;
+  text-align: center;
+}
+.skills-intro {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.skills-list {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.skill-item {
+  margin-bottom: 25px;
+  border-left: 4px solid #007bff;
+  padding-left: 15px;
+}
+
+.skill-item h3 {
+  color: #007bff;
+  margin-bottom: 8px;
+}
+
+.skill-item p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.skill-item:hover {
+  transform: translateX(5px);
+}
+
+.dark-mode .skill-item h3 {
+  color: #ffd43b;
+}
+
+.dark-mode .skill-item p {
+  color: #ccc;
+}
+
+.dark-mode .skill-item {
+  border-color: #ffd43b;
+}
+
+/* Glassmorphism effect */
+/* .glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  margin: 30px 0;
+} */
+ .glass {
+  background: rgba(255, 255, 255, 0.12); /* subtle transparency */
+  backdrop-filter: blur(10px);           /* soft frosted effect */
+  border-radius: 20px;                   /* smooth edges */
+  padding: 25px;                         /* inner spacing */
+  margin: 30px 0;                        /* spacing between sections */
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.glass:hover {
+  transform: translateY(-2px);           /* gentle hover lift */
+  background: rgba(255, 255, 255, 0.15); /* subtle glow on hover */
+}
+
+/* Dark Mode */
+.dark-mode .glass {
+  background: rgba(255, 255, 255, 0.08); /* slightly darker for contrast */
+}
+
+.dark-mode .glass:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+
+/* ------------------ Skills ------------------ */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.skill {
+  padding: 15px;
+  background: rgba(0, 123, 255, 0.08);
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.skill:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+/* ------------------ Projects ------------------ */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.project {
+  position: relative;
+  padding: 25px 20px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.project:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 123, 255, 0.1);
+}
+
+.project h3 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.project p {
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.project-btn {
+  display: inline-block;
+  margin-top: 15px;
+  background: #007bff;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.project-btn:hover {
+  background: #0056b3;
+  transform: translateY(-3px);
+}
+
+/* Dark Mode */
+.dark-mode .project {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dark-mode .project h3 {
+  color: #ffd43b;
+}
+
+.dark-mode .project p {
+  color: #ccc;
+}
+
+.dark-mode .project-btn {
+  background: #ffd43b;
+  color: #121212;
+}
+
+.dark-mode .project-btn:hover {
+  background: #e6c200;
+}
+
+/* ------------------ Education ------------------ */
+.edu-list {
+  list-style: none;
+  margin-top: 30px;
+  text-align: left;
+  max-width: 700px;
+  margin-inline: auto;
+  padding: 0;
+}
+
+.edu-list li {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  border-left: 4px solid #007bff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, background 0.3s;
+}
+
+.edu-list li strong {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.edu-list li:hover {
+  transform: translateX(5px);
+  background: rgba(0, 123, 255, 0.1);
+}
+
+.dark-mode .edu-list li {
+  background: rgba(255, 255, 255, 0.1);
+  border-left-color: #ffd43b;
+}
+
+.dark-mode .edu-list li strong {
+  color: #ffd43b;
+}
+
+
+/* ------------------ certifications ------------------ */
+.cert-intro {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.cert-list {
+  list-style: none;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+  padding-left: 0;
+}
+
+.cert-list li {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-left: 4px solid #007bff;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+  line-height: 1.6;
+}
+
+.cert-list li strong {
+  color: #007bff;
+}
+
+.cert-list li span {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.cert-list li:hover {
+  transform: translateX(5px);
+}
+
+.dark-mode .cert-list li {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #ffd43b;
+}
+
+.dark-mode .cert-list li strong {
+  color: #ffd43b;
+}
+
+.dark-mode .cert-list li span {
+  color: #ccc;
+}
+
+/* ------------------ Footer ------------------ */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* ------------------ Animations ------------------ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------ Dark Mode ------------------ */
+.dark-mode {
+  background: #121212;
+  color: #eaeaea;
+}
+
+.dark-mode .navbar,
+.dark-mode footer {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .glass,
+.dark-mode .project {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dark-mode .skill {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#goTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #007bff, #4b8bbe);
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0,123,255,0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none; /* hide initially */
+}
+
+/* Hover effect */
+#goTop:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(0,123,255,0.5);
+}
+
+/* Dark mode */
+.dark-mode #goTop {
+  background: linear-gradient(135deg, #ffd43b, #ffdd00);
+  color: #121212;
+  box-shadow: 0 5px 15px rgba(255,212,59,0.3);
+}
+
+.dark-mode #goTop:hover {
+  box-shadow: 0 8px 20px rgba(255,212,59,0.5);
+}
