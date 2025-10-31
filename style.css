@@ -151,6 +151,48 @@ h1, h2, h3 {
   box-shadow: 0 8px 20px rgba(255, 212, 59, 0.4);
 }
 
+/* -------------Resume---------- */
+
+.btn-resume {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* space between icon/text */
+  background: rgba(0, 123, 255, 0.2); /* subtle transparent background */
+  color: #007bff;
+  padding: 10px 20px;
+  border-radius: 25px; /* smooth rounded edges */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 123, 255, 0.4); /* subtle outline */
+}
+
+/* Hover effect */
+.btn-resume:hover {
+  background: rgba(0, 123, 255, 0.3);
+  color: #004a99; /* slightly darker text on hover */
+  transform: translateY(-2px);
+}
+
+/* Dark mode support */
+.dark-mode .btn-resume {
+  background: rgba(255, 212, 59, 0.2);
+  color: #ffd43b;
+  border: 1px solid rgba(255, 212, 59, 0.4);
+}
+
+.dark-mode .btn-resume:hover {
+  background: rgba(255, 212, 59, 0.3);
+  color: #b38f00;
+}
+
+/* Optional PDF icon */
+.btn-resume::before {
+  content: "📄";
+  font-size: 1.2rem;
+}
+
 
 /* ------------------ Sections ------------------ */
 .section {
