@@ -1,6 +1,13 @@
 const themeToggle = document.getElementById("themeToggle");
 const body = document.body;
 
+const menuBtn = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+navLinks.classList.toggle("show");
+});
+
 // Load saved theme
 if (localStorage.getItem("theme") === "dark") {
   body.classList.add("dark-mode");
